@@ -1,5 +1,5 @@
 ---
-title: "hw 3"
+title: "ENVS 193DS Homework 3"
 author: "Stella Symonds"
 format: pdf
 execute: 
@@ -31,7 +31,38 @@ bike_rides <- read_xlsx(
 
 ## Problem 1 
 
-a. 
+a. Pearson's correlation and Spearman rank correlation are two tests that determine the strength of the relationship between temperature and giant kelp frond elongation rate. Pearson's correlation requires continuous, normally distributed variables with a linear relationship, while Spearman rank correlation does not require normally distributed variables. 
+
+b. 
+```{r}
+#| label: visualization # ADD COLOR
+
+# base layer ggplot
+ggplot(data = kelp, 
+       mapping = aes(x = temp_c, # x axis is temp
+                     y = kelp_elong)) + # y axis is kelp growth rate
+  # first layer: points
+  geom_point(color = "#D6364F", # custom color
+             shape = 15) + # make points square
+  # rename axes, add units
+  labs(x = "Temp (C)",
+       y = "Kelp elongation rate (cm/day)") + 
+  theme_minimal() # custom theme
+```
+
+c. 
+### Check assumptions 
+```{r}
+#| label: check-assumptions
+
+```
+
+### Run the test
+```{r}
+#| label: run-test
+
+```
+
 
 
 
