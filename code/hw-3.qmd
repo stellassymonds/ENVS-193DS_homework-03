@@ -74,8 +74,93 @@ cor.test(kelp$kelp_elong, kelp$temp_c, # specify variables within data frame
          method = "pearson")
 ```
 
+d. I used a Pearson's correlation test to evaluate the strength of the relationship between temperature and giant kelp frond elongation rate because the data is continuous, normally distributed, and has a linear relationship. 
 
+We found a moderate negative relationship between temperature and giant kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.2, p < 0.001, $\alpha$ = 0.05). As temperature increases, giant kelp frond elongation rate decreases. 
 
+e. Lower temperatures are conducive for increased giant kelp growth rates
+
+## Problem 2
+
+a. 
+```{r}
+#| label: continuous-predictor-visual ADD SUBTITLE 
+
+# cleaning data
+wind_speed_and_duration <- bike_rides |> # create new object from rides
+   clean_names() |> # clean column names
+  # select wind speed and duration columns
+  select(wind_speed_mph, duration_seconds)
+
+# plot the data, base layer ggplot
+ggplot(data = wind_speed_and_duration,
+       # assign x as wind speed, y as ride duration
+       mapping = aes(x = wind_speed_mph,
+                     y = duration_seconds,
+                     color = "wind_speed_and_duration")) + # add color
+  # first layer: points
+  geom_point() +
+  # manually assign colors
+  scale_color_manual(values = c("wind_speed_and_duration" = "darkblue")) + 
+    # rename x and y axes, add descriptive title
+  labs(title = "Wind speed and bike ride duration",
+       x = "Wind speed (mph)",
+       y = "Bike ride duration (seconds)") +
+  theme_classic() + # custom theme
+  # taking out legend
+  theme(legend.position = "none")
+```
+
+```{r}
+#| label: categorical-predictor-visual ADD SUBTITLE
+
+# cleaning data
+plans_and_duration <- bike_rides |> # create new object from rides
+   clean_names() |> # clean column names
+  # select plans and duration columns
+  select(plans_after_class, duration_seconds)
+
+# create new object from plans_and_duration
+plans_and_duration_summary <- plans_and_duration |> 
+  group_by(plans_after_class) |> 
+  summarize( # what I want in the summary
+    mean = mean(duration_seconds),
+    n = length(duration_seconds),
+    sd = sd(duration_seconds)) 
+
+plans_and_duration_summary # display summary
+
+# base layer ggplot
+ggplot(data = plans_and_duration,
+       # x-axis should be plans after class
+       mapping = aes(x = plans_after_class,
+                     y = duration_seconds, # y-axis is ride duration
+                     color = plans_after_class)) + # color by plans status
+  # first layer: showing the underlying data
+  geom_jitter(height = 0, # no jitter in the vertical direction
+              width = 0.2, # smaller jitter in the horizontal direction
+              alpha = 0.6) + # make the points more transparent
+  # second layer: represent means at each site
+  stat_summary(geom = "point",
+               fun = mean,
+               size = 3) + # make point bigger
+  # third layer: bars to represent standard deviation
+  geom_errorbar(data = plans_and_duration_summary, # use summary data frame
+                mapping = aes(x = plans_after_class,
+                              y = mean, # assign axes based on data frame
+                              ymin = mean - sd,
+                              ymax = mean + sd),
+                width = 0.1) + # make the bars narrower
+  # relabelling x- and y-axes, adding descriptive title
+  labs(title = "Bike ride duration depending on plans after class",
+       x = "Plans after class",
+       y = "Mean and SD ride duration (seconds)") + 
+  theme_light() + # custom theme
+  scale_color_manual(values = c("yes" = "purple", # custom colors
+                                "no" = "pink2"))
+```
+
+b. 
 
 
 
