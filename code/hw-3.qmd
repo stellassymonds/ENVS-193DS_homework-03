@@ -45,7 +45,7 @@ ggplot(data = kelp,
   geom_point(color = "#D6364F", # custom color
              shape = 15) + # make points square
   # rename axes, add units
-  labs(x = "Temp (C)",
+  labs(x = "Temp (\u00B0C)",
        y = "Kelp elongation rate (cm/day)") + 
   theme_minimal() # custom theme
 ```
@@ -55,12 +55,23 @@ c.
 ```{r}
 #| label: check-assumptions
 
+# base layer: ggplot
+ggplot(data = kelp, # starting data frame
+aes(sample = kelp_elong)) + # y-axis for QQ plot
+# first layer: QQ reference line
+geom_qq_line(color = "red") + # adding a color
+# second layer: QQ plot
+geom_qq() 
 ```
+I checked the assumption of normality by creating a QQ plot. No curved pattern in the data is evident on the plt, meaning the data is approximately normally distributed. 
 
 ### Run the test
 ```{r}
-#| label: run-test
+#| label: pearsons-correlation
 
+# run pearson's correlation test 
+cor.test(kelp$kelp_elong, kelp$temp_c, # specify variables within data frame
+         method = "pearson")
 ```
 
 
