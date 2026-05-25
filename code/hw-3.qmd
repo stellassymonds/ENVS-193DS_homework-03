@@ -1,0 +1,24 @@
+---
+title: "hw 3"
+author: "Stella Symonds"
+format: pdf
+---
+
+## Set up 
+
+```{r}
+# reading in packages 
+library(tidyverse)
+library(janitor)
+library(here)
+library(readxl)
+
+# reading in data
+# kelp data
+kelp <- read.csv(
+  here("data", "temp-kelp.csv"))
+# personal data 
+bike_rides <- read_xlsx(
+  here("data", "bike-rides.xlsx"))
+```
+
