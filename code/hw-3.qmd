@@ -2,11 +2,16 @@
 title: "hw 3"
 author: "Stella Symonds"
 format: pdf
+execute: 
+  message: false
+  warning: false
 ---
 
-## Set up 
+# Part 1: Set up 
 
 ```{r}
+#| label: set-up
+
 # reading in packages 
 library(tidyverse)
 library(janitor)
@@ -21,4 +26,14 @@ kelp <- read.csv(
 bike_rides <- read_xlsx(
   here("data", "bike-rides.xlsx"))
 ```
+
+# Part 2: Problems 
+
+## Problem 1 
+
+a. 
+
+
+
+
 
