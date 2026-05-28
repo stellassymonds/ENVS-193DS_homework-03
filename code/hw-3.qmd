@@ -195,6 +195,12 @@ e. [My slides](https://docs.google.com/presentation/d/1U3bIobSCt50VyuEkxFTHpYLOh
 
 ## Problem 4 
 
-a. 
+a. ![Kruskal-Wallis Figure](kruskal.png)
 
+The authors use Kruskal-Wallis tests to address whether increased contact between calves and the herd, horned and without horns, has an association with the calves' growth and health.
 
+b. The authors clearly represented their statistics in figures. The x- and y-axes are logical, with the individuals categorized by treatment. Summary statistics, in this case medians, range, and IQR, are shown in in addition to the underlying data. Keeping the specific health parameter scores separate makes comparison easier for the viewer. 
+
+c. The authors handled visual clutter very well. The plots are minimal, with no unnecessary grid lines or panels. They are effective in communicating a significant amount of information with minimal ink. 
+
+d. Because there is blank space in the lower right corner of the figure, I would add a legend explaining what the treatment acronyms (WDC, DTC, NOC) stand for. This is explained in the figure caption, but I think it could be helpful to see right within the figure.  
