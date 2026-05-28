@@ -2,7 +2,9 @@
 title: "ENVS 193DS Homework 3"
 author: "Stella Symonds"
 date: 5/28/26
-format: pdf
+format:
+  pdf:
+    toc: true # use this to display a table of contents
 execute: 
   message: false
   warning: false
@@ -79,7 +81,19 @@ d. I used a Pearson's correlation test to evaluate the strength of the relations
 
 We found a moderate negative relationship between temperature and giant kelp frond elongation rate (Pearson's r = -0.69, t(30) = -5.2, p < 0.001, $\alpha$ = 0.05). As temperature increases, giant kelp frond elongation rate decreases. 
 
-e. Lower temperatures are conducive for increased giant kelp growth rates
+e. Lower temperatures are conducive for higher giant kelp growth rates. Keeping temperatures below a certain value may be beneficial for giant kelp growth and giant kelp health by association. 
+
+f. ### Run the other test
+```{r}
+#| label: spearman-rank-correlation
+
+# run spearman rank correlation test 
+cor.test(kelp$kelp_elong, kelp$temp_c, # specify variables within data frame
+         method = "spearman")
+```
+
+We found a moderate negative relationship between temperature and giant kelp frond elongation rate (Spearman ρ = -0.69, S = 9216, p < 0.001, $\alpha$ = 0.05). The Spearman rank correlation and Pearson's correlation tests would have led me to make the same decision to reject the null hypothesis and conclude that the relationship between temperature and giant kelp frond elongation rate is moderately negative. Both p values were less than 0.001, representing the reasoning for rejection of the null, and produced a correlation coefficient of about -0.69, representing the strength of the relationship. 
+
 
 ## Problem 2
 
