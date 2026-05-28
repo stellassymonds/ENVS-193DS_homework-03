@@ -1,6 +1,7 @@
 ---
 title: "ENVS 193DS Homework 3"
 author: "Stella Symonds"
+date: 5/28/26
 format: pdf
 execute: 
   message: false
@@ -170,11 +171,13 @@ Figure 2 (categorical): Mean bike ride duration is slightly higher when I don't 
 
 a. For my data, an affective visualization could look like an artistic representation of my bike ride length, arranged to look like a bike wheel. I could do this with embroidery thread on a piece of fabric. The threads of different lengths would all be coming from the center of the wheel, sprawling outwards. I could use different colors of thread to represent whether I had plans after class or not and could do different stitches to reflect the wind speed of each bike ride. 
 
-b. 
+b. ![My Sketch](sketch.jpg)
 
-c. 
+c. ![My Draft](draft.jpg)
 
-d. 
+d. My work shows my bike ride durations from the campus bike racks to my home, as well as whether I had plans after class and the wind speed. Stefanie Posavec and Giorgia Lupi’s Dear Data project influenced my work. I liked how they used a variety of shapes, colors, and line types. I wanted my work to resemble a bike in some way, and their designs inspired me to make my piece in the shape of a bike wheel. My work is an embroidered piece on a fabric backing, made of only fabric and embroidery thread. To create my work, I first chose my key for colors and shapes. Next, I converted my bike ride durations into physical lengths in centimeters and marked the ending points on my fabric for each bike ride. I then stitched each bike ride onto the fabric in its corresponding color and shape.
+
+e. [My slides](https://docs.google.com/presentation/d/1U3bIobSCt50VyuEkxFTHpYLOhekoFjYayGJpzDQgLgc/edit?usp=sharing)
 
 ## Problem 4 
 
