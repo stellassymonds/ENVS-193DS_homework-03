@@ -84,7 +84,7 @@ e. Lower temperatures are conducive for increased giant kelp growth rates
 
 a. 
 ```{r}
-#| label: continuous-predictor-visual ADD SUBTITLE 
+#| label: continuous-predictor-visual
 
 # cleaning data
 wind_speed_and_duration <- bike_rides |> # create new object from rides
@@ -102,8 +102,9 @@ ggplot(data = wind_speed_and_duration,
   geom_point() +
   # manually assign colors
   scale_color_manual(values = c("wind_speed_and_duration" = "darkblue")) + 
-    # rename x and y axes, add descriptive title
+    # rename x and y axes, add descriptive title and subtitle
   labs(title = "Wind speed and bike ride duration",
+       subtitle = "05/26/26",
        x = "Wind speed (mph)",
        y = "Bike ride duration (seconds)") +
   theme_classic() + # custom theme
@@ -112,7 +113,7 @@ ggplot(data = wind_speed_and_duration,
 ```
 
 ```{r}
-#| label: categorical-predictor-visual ADD SUBTITLE
+#| label: categorical-predictor-visual
 
 # cleaning data
 plans_and_duration <- bike_rides |> # create new object from rides
@@ -151,8 +152,9 @@ ggplot(data = plans_and_duration,
                               ymin = mean - sd,
                               ymax = mean + sd),
                 width = 0.1) + # make the bars narrower
-  # relabelling x- and y-axes, adding descriptive title
+  # relabelling x- and y-axes, adding descriptive title and subtitle
   labs(title = "Bike ride duration depending on plans after class",
+       subtitle = "05/26/26",
        x = "Plans after class",
        y = "Mean and SD ride duration (seconds)") + 
   theme_light() + # custom theme
@@ -160,7 +162,22 @@ ggplot(data = plans_and_duration,
                                 "no" = "pink2"))
 ```
 
+b. Figure 1 (continuous): Possible effect of wind speed on my bike ride duration. Blue points represent individual bike rides. Data was manually recorded. 
+
+Figure 2 (categorical): Mean bike ride duration is slightly higher when I don't have plans after class. Small transparent points represent individual bike rides (purple: plans after class, pink: no plans after class). Larger opaque points represent the means. Bars represent one standard deviation from the mean. Data was manually recorded. 
+
+## Problem 3 
+
+a. For my data, an affective visualization could look like an artistic representation of my bike ride length, arranged to look like a bike wheel. I could do this with embroidery thread on a piece of fabric. The threads of different lengths would all be coming from the center of the wheel, sprawling outwards. I could use different colors of thread to represent whether I had plans after class or not and could do different stitches to reflect the wind speed of each bike ride. 
+
 b. 
 
+c. 
+
+d. 
+
+## Problem 4 
+
+a. 
 
 
