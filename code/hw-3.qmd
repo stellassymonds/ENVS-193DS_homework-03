@@ -60,13 +60,13 @@ c.
 
 # base layer: ggplot
 ggplot(data = kelp, # starting data frame
-aes(sample = kelp_elong)) + # y-axis for QQ plot
-# first layer: QQ reference line
-geom_qq_line(color = "red") + # adding a color
-# second layer: QQ plot
-geom_qq() 
+       aes(sample = kelp_elong)) + # y-axis for QQ plot
+  # first layer: QQ reference line
+  geom_qq_line(color = "red") + # adding a color
+  # second layer: QQ plot
+  geom_qq() 
 ```
-I checked the assumption of normality by creating a QQ plot. No curved pattern in the data is evident on the plt, meaning the data is approximately normally distributed. 
+I checked the assumption of normality by creating a QQ plot. No curved pattern in the data is evident on the plot, meaning the data is approximately normally distributed. 
 
 ### Run the test
 ```{r}
